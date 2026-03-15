@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Analytics | FWMS</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+padding:40px;
+}
+
+.chart{
+background:white;
+padding:20px;
+border-radius:10px;
+width:700px;
+margin:auto;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Food Waste Analytics</h2>
+
+<div class="chart">
+<canvas id="chart"></canvas>
+</div>
+
+<script>
+
+const ctx = document.getElementById('chart');
+
+new Chart(ctx,{
+type:'line',
+data:{
+labels:['Jan','Feb','Mar','Apr','May'],
+datasets:[{
+label:'Food Saved (kg)',
+data:[120,180,150,210,250]
+}]
+}
+})
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FWMS Dashboard | Food Waste Management System</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+    
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+display:flex;
+background:#f4f9fb;
+}
+
+/* Sidebar */
+
+.sidebar{
+width:250px;
+height:100vh;
+background:#0f172a;
+color:white;
+padding:25px;
+position:fixed;
+}
+
+.sidebar h2{
+margin-bottom:40px;
+color:#38bdf8;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+padding:15px 10px;
+margin-bottom:10px;
+cursor:pointer;
+border-radius:8px;
+transition:0.3s;
+}
+
+.sidebar ul li:hover{
+background:#1e293b;
+}
+
+/* Main Content */
+
+.main{
+margin-left:250px;
+width:100%;
+padding:20px;
+}
+
+/* Header */
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+.header h1{
+font-size:24px;
+}
+
+.profile{
+background:white;
+padding:8px 15px;
+border-radius:10px;
+box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-bottom:25px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h3{
+font-size:16px;
+color:#64748b;
+}
+
+.card p{
+font-size:24px;
+font-weight:600;
+margin-top:10px;
+}
+
+/* Chart */
+
+.chart{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+margin-bottom:25px;
+}
+
+/* Table */
+
+.table{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid #e2e8f0;
+}
+
+th{
+background:#f1f5f9;
+}
+
+.status{
+padding:5px 10px;
+border-radius:6px;
+font-size:12px;
+}
+
+.completed{
+background:#dcfce7;
+color:#166534;
+}
+
+.pending{
+background:#fef3c7;
+color:#92400e;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>FWMS</h2>
+
+<ul>
+<li>Dashboard</li>
+<li>Food Donations</li>
+<li>NGO Requests</li>
+<li>Waste Reports</li>
+<li>Analytics</li>
+<li>Settings</li>
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="header">
+<h1>Food Waste Management Dashboard</h1>
+<div class="profile">Admin</div>
+</div>
+
+<!-- Cards -->
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Donations</h3>
+<p>128</p>
+</div>
+
+<div class="card">
+<h3>Food Saved (kg)</h3>
+<p>560 kg</p>
+</div>
+
+<div class="card">
+<h3>NGOs Connected</h3>
+<p>24</p>
+</div>
+
+<div class="card">
+<h3>Pending Requests</h3>
+<p>8</p>
+</div>
+
+</div>
+
+<!-- Chart -->
+
+<div class="chart">
+
+<h3>Food Waste Analytics</h3>
+
+<canvas id="wasteChart"></canvas>
+
+</div>
+
+<!-- Table -->
+
+<div class="table">
+
+<h3>Recent Food Donations</h3>
+
+<table>
+
+<tr>
+<th>Donor</th>
+<th>Food Type</th>
+<th>Quantity</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Hotel Grand</td>
+<td>Cooked Meals</td>
+<td>50 kg</td>
+<td><span class="status completed">Collected</span></td>
+</tr>
+
+<tr>
+<td>City Restaurant</td>
+<td>Bread & Snacks</td>
+<td>25 kg</td>
+<td><span class="status pending">Pending</span></td>
+</tr>
+
+<tr>
+<td>Food Plaza</td>
+<td>Rice & Curry</td>
+<td>40 kg</td>
+<td><span class="status completed">Delivered</span></td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+const ctx=document.getElementById('wasteChart');
+
+new Chart(ctx,{
+type:'bar',
+data:{
+labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+datasets:[{
+label:'Food Saved (kg)',
+data:[40,55,60,30,75,50,65],
+}]
+}
+});
+
+</script>
+
+</body>
+</html>

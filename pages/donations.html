@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Food Donations | FWMS</title>
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6fb;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:600px;
+margin:auto;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+button{
+background:#0ea5e9;
+color:white;
+border:none;
+padding:12px;
+width:100%;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0284c7;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Register Food Donation</h2>
+
+<form>
+
+<input type="text" placeholder="Restaurant / Donor Name">
+
+<select>
+<option>Food Type</option>
+<option>Cooked Food</option>
+<option>Packaged Food</option>
+<option>Fruits & Vegetables</option>
+</select>
+
+<input type="number" placeholder="Quantity (kg)">
+
+<input type="text" placeholder="Pickup Location">
+
+<textarea placeholder="Additional Details"></textarea>
+
+<button>Submit Donation</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
